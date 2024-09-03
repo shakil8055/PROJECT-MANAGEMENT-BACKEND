@@ -25,9 +25,7 @@ app.use("/api/projects", projectsRoutes);
 app.use("/api/user", userRoutes);
 
 // connecting to the database(mongodb)
-mongoose.set("strictQuery", false);
-mongoose
-  .connect(process.env.MONGO_URI)
+mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     // listening request
     app.listen(port, () => {
