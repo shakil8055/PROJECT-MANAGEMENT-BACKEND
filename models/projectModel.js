@@ -24,8 +24,8 @@ const projectSchema = new Schema(
       type: String,
       required: true,
     },
-    dev: {
-      type: Number,
+    description: {
+      type: string,
       required: true,
     },
     user_id: {

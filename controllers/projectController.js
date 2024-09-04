@@ -29,16 +29,17 @@ const getSingleProject = async (req, res) => {
 
 // post a new project
 const postProject = async (req, res) => {
-  const { title, tech, budget, duration, manager, dev } = req.body;
+  const { title, tech, budget, duration, manager, description } = req.body;
 
   let emptyFields = [];
 
   if (!title) emptyFields.push("title");
   if (!tech) emptyFields.push("tech");
+  if (!description) emptyFields.push("description");
   if (!budget) emptyFields.push("budget");
   if (!duration) emptyFields.push("duration");
   if (!manager) emptyFields.push("manager");
-  if (!dev) emptyFields.push("dev");
+  
 
   if (emptyFields.length > 0) {
     return res
@@ -80,16 +81,17 @@ const deleteProject = async (req, res) => {
 const updateProject = async (req, res) => {
   const { id } = req.params;
 
-  const { title, tech, budget, duration, manager, dev } = req.body;
+  const { title, tech, budget, duration, manager, description } = req.body;
 
   let emptyFields = [];
 
   if (!title) emptyFields.push("title");
   if (!tech) emptyFields.push("tech");
+  if (!description) emptyFields.push("description");
   if (!budget) emptyFields.push("budget");
   if (!duration) emptyFields.push("duration");
   if (!manager) emptyFields.push("manager");
-  if (!dev) emptyFields.push("dev");
+  
 
   if (emptyFields.length > 0) {
     return res
